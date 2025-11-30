@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact/Careers - Ironside Epoxy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.svg" alt="Ironside Epoxy Logo" class="logo-img" onerror="this.src='Logo.png'">
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="what-is-epoxy.html" class="nav-link">What is Epoxy?</a>
+                <a href="our-work.html" class="nav-link">Our Work</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link active">Contact/Careers</a>
+            </nav>
+            <a href="tel:3363600508" class="btn-call">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3.654 1.328a.678.678 0 00-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 004.168 6.608 17.569 17.569 0 006.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 00-.063-1.015l-2.307-1.794a.678.678 0 00-.58-.122L9.65 10.5a.678.678 0 01-.58-.122L6.5 8.43a.678.678 0 01-.122-.58l.122-1.307a.678.678 0 00-.122-.58L4.654 3.328z" fill="currentColor"/>
+                </svg>
+                Call Now: (336) 360-0508
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <span class="section-label">Get In Touch</span>
+                <h1>Contact Us & Careers</h1>
+                <p class="page-subtitle">Questions or interested in joining our team? Get in touch.</p>
+            </div>
+
+            <!-- Contact Cards -->
+            <section class="contact-cards-section">
+                <div class="contact-cards-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M3.654 1.328a.678.678 0 00-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 004.168 6.608 17.569 17.569 0 006.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 00-.063-1.015l-2.307-1.794a.678.678 0 00-.58-.122L9.65 10.5a.678.678 0 01-.58-.122L6.5 8.43a.678.678 0 01-.122-.58l.122-1.307a.678.678 0 00-.122-.58L4.654 3.328z"/>
+                            </svg>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p><a href="tel:3363600508">(336) 360-0508</a></p>
+                        <p class="contact-hours">Mon-Fri: 8am-6pm<br>Sat: 9am-4pm</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l7 4.2 7-4.2V4a1 1 0 00-1-1H2zm13 2.383l-4.708 2.825L15 11.105V5.383zm-.034 6.875l-5.64-3.47L8 9.583l-1.326-.795-5.64 3.47A1 1 0 002 13h12a1 1 0 00.966-.742zM1 11.105l4.708-2.897L1 5.383v5.722z"/>
+                            </svg>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:ironsideepoxy@gmail.com">ironsideepoxy@gmail.com</a></p>
+                        <p class="contact-note">We'll respond within 24 hours.</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 002 6c0 4.314 6 10 6 10zm0-7a3 3 0 110-6 3 3 0 010 6z"/>
+                            </svg>
+                        </div>
+                        <h3>Location</h3>
+                        <p>2941 Indiana Ave<br>Winston-Salem, NC 27105</p>
+                        <p class="contact-note">Serving the Triad area.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form -->
+            <section class="form-section">
+                <div class="form-header">
+                    <div class="form-icon">✈</div>
+                    <h2>Send Us a Message</h2>
+                    <p>Have a question about our services, pricing, or availability? Fill out the form below and we'll get back to you promptly.</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="quote">Request a Quote</option>
+                                <option value="question">General Question</option>
+                                <option value="service">Service Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </section>
+
+            <!-- Careers Section -->
+            <section class="careers-section">
+                <div class="careers-header">
+                    <div class="careers-icon">🏢</div>
+                    <h2>Join Our Team</h2>
+                </div>
+                <div class="careers-benefits">
+                    <h3>Why Work With Us?</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-check">✓</div>
+                            <p>Competitive pay and benefits</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-check">✓</div>
+                            <p>Professional training provided</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-check">✓</div>
+                            <p>Growth opportunities</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-check">✓</div>
+                            <p>Great team environment</p>
+                        </div>
+                    </div>
+                    <p class="careers-description">We're always looking for talented, hardworking individuals to join our growing team. If you have experience in flooring, construction, or are eager to learn, we'd love to hear from you.</p>
+                </div>
+                <form class="careers-form" id="careersForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="career-name">Full Name *</label>
+                            <input type="text" id="career-name" name="career-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="career-email">Email *</label>
+                            <input type="email" id="career-email" name="career-email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="career-phone">Phone *</label>
+                            <input type="tel" id="career-phone" name="career-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position Interested In *</label>
+                            <select id="position" name="position" required>
+                                <option value="">Select a position</option>
+                                <option value="installer">Epoxy Installer</option>
+                                <option value="helper">Installation Helper</option>
+                                <option value="sales">Sales Representative</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+                            <select id="experience" name="experience">
+                                <option value="">Select experience level</option>
+                                <option value="0">No experience</option>
+                                <option value="1-2">1-2 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5+">5+ years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="resume">Resume/CV Link</label>
+                            <input type="url" id="resume" name="resume" placeholder="Link to Google Drive, Dropbox, or LinkedIn">
+                        </div>
+                    </div>
+                    <p class="resume-note">Or email your resume to <a href="mailto:ironsideepoxy@gmail.com">ironsideepoxy@gmail.com</a></p>
+                    <div class="form-group">
+                        <label for="about">Tell Us About Yourself *</label>
+                        <textarea id="about" name="about" rows="6" placeholder="Share your experience, skills, and why you'd like to work with us..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-brand">
+                    <img src="logo-white.svg" alt="Ironside Epoxy Logo" class="footer-logo" onerror="this.src='Logo.png'">
+                    <p>Professional epoxy flooring solutions for residential and commercial spaces. Transforming floors with premium quality and expert craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon premium-social">f</a>
+                        <a href="#" class="social-icon premium-social">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon premium-social">in</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="what-is-epoxy.html">What is Epoxy?</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="our-work.html">Our Work</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Decorative Epoxy</a></li>
+                        <li><a href="services.html">Metallic Epoxy</a></li>
+                        <li><a href="services.html">Concrete Overlays</a></li>
+                        <li><a href="contact.html">Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M3.654 1.328a.678.678 0 00-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 004.168 6.608 17.569 17.569 0 006.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 00-.063-1.015l-2.307-1.794a.678.678 0 00-.58-.122L9.65 10.5a.678.678 0 01-.58-.122L6.5 8.43a.678.678 0 01-.122-.58l.122-1.307a.678.678 0 00-.122-.58L4.654 3.328z"/>
+                            </svg>
+                            <a href="tel:3363600508">(336) 360-0508</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l7 4.2 7-4.2V4a1 1 0 00-1-1H2zm13 2.383l-4.708 2.825L15 11.105V5.383zm-.034 6.875l-5.64-3.47L8 9.583l-1.326-.795-5.64 3.47A1 1 0 002 13h12a1 1 0 00.966-.742zM1 11.105l4.708-2.897L1 5.383v5.722z"/>
+                            </svg>
+                            <a href="mailto:ironsideepoxy@gmail.com">ironsideepoxy@gmail.com</a>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-small">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ironside Epoxy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handlers
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        document.getElementById('careersForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application! We will review it and get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
