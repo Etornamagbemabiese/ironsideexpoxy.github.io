@@ -94,39 +94,16 @@
                     <h2>Send Us a Message</h2>
                     <p>Have a question about our services, pricing, or availability? Fill out the form below and we'll get back to you promptly.</p>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject</option>
-                                <option value="quote">Request a Quote</option>
-                                <option value="question">General Question</option>
-                                <option value="service">Service Inquiry</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                <div class="google-form-container" style="text-align: center; padding: 3rem 0;">
+                    <a href="https://forms.gle/W3P2X73LLSVcNxPY8" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1.1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                        </svg>
+                        Open Contact Form
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--gray-medium);">Click the button above to open our contact form in a new window.</p>
+                </div>
             </section>
 
             <!-- Careers Section -->
@@ -157,56 +134,16 @@
                     </div>
                     <p class="careers-description">We're always looking for talented, hardworking individuals to join our growing team. If you have experience in flooring, construction, or are eager to learn, we'd love to hear from you.</p>
                 </div>
-                <form class="careers-form" id="careersForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="career-name">Full Name *</label>
-                            <input type="text" id="career-name" name="career-name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="career-email">Email *</label>
-                            <input type="email" id="career-email" name="career-email" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="career-phone">Phone *</label>
-                            <input type="tel" id="career-phone" name="career-phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="position">Position Interested In *</label>
-                            <select id="position" name="position" required>
-                                <option value="">Select a position</option>
-                                <option value="installer">Epoxy Installer</option>
-                                <option value="helper">Installation Helper</option>
-                                <option value="sales">Sales Representative</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="experience">Years of Experience</label>
-                            <select id="experience" name="experience">
-                                <option value="">Select experience level</option>
-                                <option value="0">No experience</option>
-                                <option value="1-2">1-2 years</option>
-                                <option value="3-5">3-5 years</option>
-                                <option value="5+">5+ years</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="resume">Resume/CV Link</label>
-                            <input type="url" id="resume" name="resume" placeholder="Link to Google Drive, Dropbox, or LinkedIn">
-                        </div>
-                    </div>
-                    <p class="resume-note">Or email your resume to <a href="mailto:ironsideepoxy@gmail.com">ironsideepoxy@gmail.com</a></p>
-                    <div class="form-group">
-                        <label for="about">Tell Us About Yourself *</label>
-                        <textarea id="about" name="about" rows="6" placeholder="Share your experience, skills, and why you'd like to work with us..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit Application</button>
-                </form>
+                <div class="google-form-container" style="text-align: center; padding: 3rem 0;">
+                    <a href="https://forms.gle/1PjSB12LGjtQnx2T6" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1.1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                        </svg>
+                        Open Careers Application Form
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--gray-medium);">Click the button above to open our careers application form in a new window.</p>
+                </div>
             </section>
         </div>
     </main>
@@ -279,20 +216,6 @@
     </a>
 
     <script src="animations.js"></script>
-    <script>
-        // Form submission handlers
-        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-
-        document.getElementById('careersForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your application! We will review it and get back to you soon.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
 

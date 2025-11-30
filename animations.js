@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Intersection Observer for scroll reveals
+    // Intersection Observer for scroll reveals (faster trigger)
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -20px 0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
@@ -49,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe all scroll-reveal elements
     const revealElements = document.querySelectorAll('.scroll-reveal');
     revealElements.forEach((el, index) => {
-        // Stagger animations (reduced on mobile)
+        // Stagger animations (faster)
         const isMobile = window.innerWidth <= 768;
-        el.style.transitionDelay = isMobile ? `${index * 0.05}s` : `${index * 0.1}s`;
+        el.style.transitionDelay = isMobile ? `${index * 0.02}s` : `${index * 0.03}s`;
         observer.observe(el);
     });
 
@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add fade-in animation to hero elements
+    // Add fade-in animation to hero elements (faster)
     const heroElements = document.querySelectorAll('.fade-in-up');
     heroElements.forEach((el, index) => {
-        el.style.animationDelay = `${index * 0.1}s`;
+        el.style.animationDelay = `${index * 0.05}s`;
     });
     
     // Prevent zoom on double tap (iOS)
