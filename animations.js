@@ -1,5 +1,36 @@
-// Scroll Reveal Animations
+// Scroll Reveal Animations - Refined
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.nav-refined');
+    
+    if (mobileMenuToggle && nav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Close menu when clicking nav links
+        const navLinks = nav.querySelectorAll('.nav-link-refined');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                mobileMenuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+    
     // Intersection Observer for scroll reveals
     const observerOptions = {
         threshold: 0.1,
@@ -17,16 +48,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Observe all scroll-reveal elements
     const revealElements = document.querySelectorAll('.scroll-reveal');
-    revealElements.forEach(el => observer.observe(el));
+    revealElements.forEach((el, index) => {
+        // Stagger animations (reduced on mobile)
+        const isMobile = window.innerWidth <= 768;
+        el.style.transitionDelay = isMobile ? `${index * 0.05}s` : `${index * 0.1}s`;
+        observer.observe(el);
+    });
 
-    // Parallax effect for hero background (subtle)
-    const heroOverlay = document.querySelector('.hero-background-overlay-new');
-    if (heroOverlay) {
+    // Parallax effect for hero background (subtle, disabled on mobile for performance)
+    const heroBg = document.querySelector('.hero-bg-image');
+    if (heroBg && window.innerWidth > 768) {
+        let ticking = false;
         window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * 0.3;
-            if (heroOverlay && scrolled < window.innerHeight) {
-                heroOverlay.style.transform = `translateY(${rate}px)`;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * 0.2;
+                    if (scrolled < window.innerHeight) {
+                        heroBg.style.transform = `translateY(${rate}px)`;
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
         });
     }
@@ -44,5 +87,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Add fade-in animation to hero elements
+    const heroElements = document.querySelectorAll('.fade-in-up');
+    heroElements.forEach((el, index) => {
+        el.style.animationDelay = `${index * 0.1}s`;
+    });
+    
+    // Prevent zoom on double tap (iOS)
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function(event) {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
 });
 

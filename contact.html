@@ -2,32 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Contact/Careers - Ironside Epoxy</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-premium.css">
+    <link rel="stylesheet" href="styles-refined.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header-refined">
         <div class="container">
-            <div class="logo">
-                <img src="logo.svg" alt="Ironside Epoxy Logo" class="logo-img" onerror="this.src='Logo.png'">
-            </div>
-            <nav class="nav">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="what-is-epoxy.html" class="nav-link">What is Epoxy?</a>
-                <a href="our-work.html" class="nav-link">Our Work</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="contact.html" class="nav-link active">Contact/Careers</a>
+            <a href="index.html" class="logo">
+                <img src="Logo.png" alt="Ironside Epoxy Logo" class="logo-img">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-refined">
+                <a href="index.html" class="nav-link-refined">Home</a>
+                <a href="what-is-epoxy.html" class="nav-link-refined">What is Epoxy?</a>
+                <a href="our-work.html" class="nav-link-refined">Our Work</a>
+                <a href="services.html" class="nav-link-refined">Services</a>
+                <a href="contact.html" class="nav-link-refined active">Contact/Careers</a>
             </nav>
-            <a href="tel:3363600508" class="btn-call">
+            <a href="tel:3363600508" class="btn-call-refined">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M3.654 1.328a.678.678 0 00-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 004.168 6.608 17.569 17.569 0 006.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 00-.063-1.015l-2.307-1.794a.678.678 0 00-.58-.122L9.65 10.5a.678.678 0 01-.58-.122L6.5 8.43a.678.678 0 01-.122-.58l.122-1.307a.678.678 0 00-.122-.58L4.654 3.328z" fill="currentColor"/>
                 </svg>
-                Call Now: (336) 360-0508
+                <span class="call-text">Call Now</span>
+                <span class="call-number">(336) 360-0508</span>
             </a>
         </div>
     </header>
@@ -206,7 +216,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col footer-brand">
-                    <img src="logo-white.svg" alt="Ironside Epoxy Logo" class="footer-logo" onerror="this.src='Logo.png'">
+                    <img src="Logo.png" alt="Ironside Epoxy Logo" class="footer-logo-refined">
                     <p>Professional epoxy flooring solutions for residential and commercial spaces. Transforming floors with premium quality and expert craftsmanship.</p>
                     <div class="social-links">
                         <a href="#" class="social-icon premium-social">f</a>
@@ -255,12 +265,20 @@
                     <a href="contact.html" class="btn btn-primary btn-small">Contact Us</a>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="footer-bottom-refined">
                 <p>&copy; 2025 Ironside Epoxy. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Quick Call Button (Mobile) -->
+    <a href="tel:3363600508" class="floating-call-btn">
+        <svg width="24" height="24" viewBox="0 0 16 16" fill="none">
+            <path d="M3.654 1.328a.678.678 0 00-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 004.168 6.608 17.569 17.569 0 006.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 00-.063-1.015l-2.307-1.794a.678.678 0 00-.58-.122L9.65 10.5a.678.678 0 01-.58-.122L6.5 8.43a.678.678 0 01-.122-.58l.122-1.307a.678.678 0 00-.122-.58L4.654 3.328z" fill="currentColor"/>
+        </svg>
+    </a>
+
+    <script src="animations.js"></script>
     <script>
         // Form submission handlers
         document.getElementById('contactForm')?.addEventListener('submit', function(e) {
