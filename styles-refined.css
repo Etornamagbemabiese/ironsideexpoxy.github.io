@@ -775,6 +775,7 @@ body {
     width: 100%;
     height: 100%;
     transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
 .project-card-refined:hover .project-image-refined {
@@ -1050,9 +1051,9 @@ body {
     object-fit: contain;
     margin-bottom: 1.25rem; /* Tighter */
     max-width: 180px;
-    filter: brightness(0) invert(1); /* Make logo white for dark footer */
     opacity: 0.95;
     transition: opacity 0.3s ease;
+    filter: brightness(0) invert(1); /* Make logo white for dark footer */
 }
 
 .footer-brand-refined:hover .footer-logo-refined {
