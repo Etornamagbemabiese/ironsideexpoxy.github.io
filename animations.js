@@ -74,6 +74,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Contact form (home + contact page): send via mailto with name, email, message
+    const contactForm = document.getElementById('contact-form-home') || document.getElementById('contact-form-page');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = (this.querySelector('[name="name"]') || {}).value || '';
+            const email = (this.querySelector('[name="email"]') || {}).value || '';
+            const body = (this.querySelector('[name="body"]') || this.querySelector('[name="message"]') || {}).value || '';
+            const subject = 'Ironside Epoxy - Website Contact from ' + (name || 'Visitor');
+            const mailtoBody = 'Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + body;
+            const mailto = 'mailto:ironsideepoxy@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(mailtoBody);
+            window.location.href = mailto;
+        });
+    }
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

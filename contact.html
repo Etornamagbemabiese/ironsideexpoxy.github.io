@@ -62,7 +62,7 @@
                         </div>
                         <h3>Call Us</h3>
                         <p><a href="tel:3363600508">(336) 360-0508</a></p>
-                        <p class="contact-hours">Mon-Fri: 8am-6pm<br>Sat: 9am-4pm</p>
+                        <p class="contact-hours">24/7 — We take calls during business hours and answer after hours.</p>
                     </div>
                     <div class="contact-card">
                         <div class="contact-icon">
@@ -87,23 +87,23 @@
                 </div>
             </section>
 
-            <!-- Contact Form -->
-            <section class="form-section">
+            <!-- Contact Form (same as homepage - sends to our email) -->
+            <section class="form-section contact-form-inline-section">
                 <div class="form-header">
-                    <div class="form-icon">✈</div>
                     <h2>Send Us a Message</h2>
-                    <p>Have a question about our services, pricing, or availability? Fill out the form below and we'll get back to you promptly.</p>
+                    <p>Have a question about our services, pricing, or availability? Fill out the form below and we'll get back to you promptly. Your message will be sent directly to our email.</p>
                 </div>
-                <div class="google-form-container" style="text-align: center; padding: 3rem 0;">
-                    <a href="https://forms.gle/W3P2X73LLSVcNxPY8" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1.1rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 11l3 3L22 4"/>
-                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-                        </svg>
-                        Open Contact Form
-                    </a>
-                    <p style="margin-top: 1rem; color: var(--gray-medium);">Click the button above to open our contact form in a new window.</p>
-                </div>
+                <form class="contact-form-inline" id="contact-form-page" action="#" method="post">
+                    <div class="form-row-inline">
+                        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+                        <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+                    </div>
+                    <div class="form-row-inline">
+                        <textarea name="body" placeholder="Your Message" rows="4" required aria-label="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <p class="form-note">Or call us at <a href="tel:3363600508">(336) 360-0508</a></p>
             </section>
 
             <!-- Careers Section -->
@@ -145,6 +145,17 @@
                     <p style="margin-top: 1rem; color: var(--gray-medium);">Click the button above to open our careers application form in a new window.</p>
                 </div>
             </section>
+
+            <!-- Location -->
+            <section class="contact-location-section">
+                <h2 class="section-title">Find Us</h2>
+                <address class="contact-address">
+                    <strong>Ironside Epoxy</strong><br>
+                    2941 Indiana Ave<br>
+                    Winston-Salem, NC 27105
+                </address>
+                <p class="contact-hours" style="margin-top: 0.5rem;">24/7 — We take calls during business hours and answer after hours.</p>
+            </section>
         </div>
     </main>
 
@@ -179,6 +190,7 @@
                     <ul>
                         <li><a href="services.html">Decorative Epoxy</a></li>
                         <li><a href="services.html">Metallic Epoxy</a></li>
+                        <li><a href="services.html">Concrete Staining</a></li>
                         <li><a href="services.html">Concrete Overlays</a></li>
                         <li><a href="contact.html">Get a Quote</a></li>
                     </ul>

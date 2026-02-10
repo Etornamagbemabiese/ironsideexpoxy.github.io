@@ -162,6 +162,144 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+/* Call button subtle variant (to left of menu on mobile) */
+.btn-call-subtle {
+    background: var(--gray-light) !important;
+    color: var(--navy-deep) !important;
+    box-shadow: none !important;
+}
+.btn-call-subtle:hover {
+    background: var(--gray-medium) !important;
+    color: var(--white) !important;
+}
+
+.header-actions-refined {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Hero logo strip above Why Choose Us */
+.hero-logo-strip {
+    padding: 2rem 0;
+    background: var(--soft-gray);
+}
+.hero-logo-strip-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-logo-hotdog {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Inline contact form (home + contact page) */
+.contact-form-inline-section {
+    padding: var(--section-padding) 0;
+    background: var(--card-bg);
+}
+.contact-form-inline {
+    max-width: 560px;
+    margin: 0 auto 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.contact-form-inline .form-row-inline {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.contact-form-inline .form-row-inline input,
+.contact-form-inline .form-row-inline textarea {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+.contact-form-inline .form-row-inline textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.contact-form-inline .form-row-inline:last-of-type input {
+    flex: 1 1 100%;
+}
+.form-note {
+    text-align: center;
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+}
+.form-note a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+/* Services page: Our Promises - larger grey background */
+.content-section-promises {
+    background: var(--soft-gray);
+    padding: 3.5rem 2.5rem;
+    border-radius: 12px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* Our Work: 3 projects max, navy accent */
+.projects-grid-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+@media (max-width: 900px) {
+    .projects-grid-three {
+        grid-template-columns: 1fr;
+    }
+}
+.reviews-section {
+    background: var(--navy-deep);
+    color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+}
+.reviews-section .section-title,
+.reviews-section .section-description {
+    color: var(--white);
+}
+.reviews-section .section-description {
+    opacity: 0.9;
+}
+.reviews-placeholder {
+    text-align: center;
+    padding: 2rem;
+}
+.reviews-coming {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.05rem;
+}
+.reviews-coming a {
+    color: var(--accent-blue-light);
+    text-decoration: underline;
+}
+
+/* Contact page: location at bottom */
+.contact-location-section {
+    margin-top: 4rem;
+    padding: 2.5rem;
+    background: var(--soft-gray);
+    border-radius: 12px;
+    text-align: center;
+}
+.contact-address {
+    font-style: normal;
+    color: var(--gray-dark);
+    line-height: 1.8;
+}
+
 /* ============================================
    HERO SECTION - Refined with Background
    ============================================ */
