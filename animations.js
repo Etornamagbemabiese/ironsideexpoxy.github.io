@@ -1,71 +1,54 @@
-// Scroll Reveal Animations - Refined
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('.nav-refined');
-    
-    if (mobileMenuToggle && nav) {
-        mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.querySelector('.mobile-toggle');
+    var nav = document.querySelector('.nav');
+
+    if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+            toggle.classList.toggle('active');
             nav.classList.toggle('active');
             document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
         });
-        
-        // Close menu when clicking nav links
-        const navLinks = nav.querySelectorAll('.nav-link-refined');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenuToggle.classList.remove('active');
+
+        nav.querySelectorAll('.nav-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+                toggle.classList.remove('active');
                 nav.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                mobileMenuToggle.classList.remove('active');
+
+        document.addEventListener('click', function (e) {
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                toggle.classList.remove('active');
                 nav.classList.remove('active');
                 document.body.style.overflow = '';
             }
         });
     }
-    
-    // Intersection Observer for scroll reveals (faster trigger)
-    const observerOptions = {
-        threshold: 0.05,
-        rootMargin: '0px 0px -20px 0px'
-    };
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    // Observe all scroll-reveal elements
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-    revealElements.forEach((el, index) => {
-        // Stagger animations (faster)
-        const isMobile = window.innerWidth <= 768;
-        el.style.transitionDelay = isMobile ? `${index * 0.02}s` : `${index * 0.03}s`;
+    document.querySelectorAll('.scroll-reveal').forEach(function (el, i) {
+        el.style.transitionDelay = (window.innerWidth <= 768 ? i * 0.03 : i * 0.05) + 's';
         observer.observe(el);
     });
 
-    // Parallax effect for hero background (subtle, disabled on mobile for performance)
-    const heroBg = document.querySelector('.hero-bg-image');
+    var heroBg = document.querySelector('.hero-bg');
     if (heroBg && window.innerWidth > 768) {
-        let ticking = false;
-        window.addEventListener('scroll', () => {
+        var ticking = false;
+        window.addEventListener('scroll', function () {
             if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    const scrolled = window.pageYOffset;
-                    const rate = scrolled * 0.2;
+                window.requestAnimationFrame(function () {
+                    var scrolled = window.pageYOffset;
                     if (scrolled < window.innerHeight) {
-                        heroBg.style.transform = `translateY(${rate}px)`;
+                        heroBg.style.transform = 'translateY(' + scrolled * 0.18 + 'px)';
                     }
                     ticking = false;
                 });
@@ -74,49 +57,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Contact form (home + contact page): send via mailto with name, email, message
-    const contactForm = document.getElementById('contact-form-home') || document.getElementById('contact-form-page');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    ['contact-form-home', 'contact-form-page'].forEach(function (id) {
+        var form = document.getElementById(id);
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            const name = (this.querySelector('[name="name"]') || {}).value || '';
-            const email = (this.querySelector('[name="email"]') || {}).value || '';
-            const body = (this.querySelector('[name="body"]') || this.querySelector('[name="message"]') || {}).value || '';
-            const subject = 'Ironside Epoxy - Website Contact from ' + (name || 'Visitor');
-            const mailtoBody = 'Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + body;
-            const mailto = 'mailto:ironsideepoxy@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(mailtoBody);
-            window.location.href = mailto;
+            var name = (form.querySelector('[name="name"]') || {}).value || '';
+            var email = (form.querySelector('[name="email"]') || {}).value || '';
+            var body = (form.querySelector('[name="body"]') || form.querySelector('[name="message"]') || {}).value || '';
+            var subject = 'Ironside Epoxy — Website Contact from ' + (name || 'Visitor');
+            var mailtoBody = 'Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + body;
+            window.location.href = 'mailto:ironsideepoxy@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(mailtoBody);
         });
-    }
+    });
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
-
-    // Add fade-in animation to hero elements (faster)
-    const heroElements = document.querySelectorAll('.fade-in-up');
-    heroElements.forEach((el, index) => {
-        el.style.animationDelay = `${index * 0.05}s`;
-    });
-    
-    // Prevent zoom on double tap (iOS)
-    let lastTouchEnd = 0;
-    document.addEventListener('touchend', function(event) {
-        const now = Date.now();
-        if (now - lastTouchEnd <= 300) {
-            event.preventDefault();
-        }
-        lastTouchEnd = now;
-    }, false);
 });
-
