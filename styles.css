@@ -36,9 +36,9 @@
 
 /* Page hero image hooks */
 body.home-page { --home-hero-image: url('aigarage2.png'); }
-body.services-page { --page-hero-image: none; }
-body.our-work-page { --page-hero-image: none; }
-body.what-is-epoxy-page { --page-hero-image: none; }
+body.services-page { --page-hero-image: url('backrolling bg.png'); }
+body.our-work-page { --page-hero-image: url('application bg.png'); }
+body.what-is-epoxy-page { --page-hero-image: url('mixing bg.png'); }
 body.contact-page { --page-hero-image: none; }
 body.careers-page { --page-hero-image: none; }
 
