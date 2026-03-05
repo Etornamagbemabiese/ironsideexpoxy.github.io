@@ -22,7 +22,7 @@
     --gray-500: #6b7280;
     --gray-600: #4b5563;
     --gray-700: #374151;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.713);
     --shadow-md: 0 4px 16px rgba(0,0,0,.1);
     --shadow-lg: 0 12px 40px rgba(0,0,0,.12);
     --shadow-xl: 0 20px 60px rgba(0,0,0,.15);
@@ -33,6 +33,14 @@
     --transition: 0.3s cubic-bezier(.4,0,.2,1);
     --max-width: 1200px;
 }
+
+/* Page hero image hooks */
+body.home-page { --home-hero-image: url('aigarage2.png'); }
+body.services-page { --page-hero-image: none; }
+body.our-work-page { --page-hero-image: none; }
+body.what-is-epoxy-page { --page-hero-image: none; }
+body.contact-page { --page-hero-image: none; }
+body.careers-page { --page-hero-image: none; }
 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
@@ -156,7 +164,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
 
 .hero-bg {
     position: absolute; inset: 0;
-    background: url('garage-header.png') center/cover no-repeat;
+    background: var(--home-hero-image, none) center/cover no-repeat;
     opacity: 0.35;
 }
 .hero-bg::after {
@@ -442,10 +450,18 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
     position: relative;
     overflow: hidden;
 }
+.page-hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: var(--page-hero-image, none) center/cover no-repeat;
+    opacity: 0.28;
+    z-index: 0;
+}
 .page-hero::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 100%, rgba(45,111,243,.08) 0%, transparent 70%);
+    background: linear-gradient(180deg, rgba(10,22,40,.88) 0%, rgba(10,22,40,.7) 100%);
+    z-index: 1;
 }
 .page-hero .container { position: relative; z-index: 2; }
 .page-hero .section-label { color: var(--blue-300); }
