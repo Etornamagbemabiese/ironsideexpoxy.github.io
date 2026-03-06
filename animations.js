@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Dynamic copyright year
+    var yearEl = document.getElementById('footer-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     var toggle = document.querySelector('.mobile-toggle');
     var nav = document.querySelector('.nav');
 
@@ -62,6 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!form) return;
         form.addEventListener('submit', function (e) {
             e.preventDefault();
+            // Honeypot check: reject if the hidden field is filled
+            var honeypot = form.querySelector('[name="website"]');
+            if (honeypot && honeypot.value) return;
             var name = (form.querySelector('[name="name"]') || {}).value || '';
             var email = (form.querySelector('[name="email"]') || {}).value || '';
             var body = (form.querySelector('[name="body"]') || form.querySelector('[name="message"]') || {}).value || '';
