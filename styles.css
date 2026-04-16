@@ -52,7 +52,7 @@
 
 /* Page hero image hooks */
 body.home-page { --home-hero-image: url('aigarage2.png'); }
-body.services-page { --page-hero-image: url('backrolling bg.png'); }
+body.services-page { --page-hero-image: url('backroll bg.png'); }
 body.our-work-page { --page-hero-image: url('application bg.png'); }
 body.what-is-epoxy-page { --page-hero-image: url('mixing bg.png'); }
 body.contact-page { --page-hero-image: none; }
@@ -311,6 +311,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
+    aspect-ratio: 4 / 3;
 }
 .quality-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -332,6 +333,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
 .project-image-wrap {
     position: relative; overflow: hidden;
     height: 260px;
+    aspect-ratio: 4 / 3;
 }
 .project-image-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .project-card:hover .project-image-wrap img { transform: scale(1.05); }
@@ -378,6 +380,12 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
 .inline-form textarea { resize: vertical; min-height: 120px; }
 .form-note { text-align: center; margin-top: 1rem; color: var(--gray-500); font-size: 0.875rem; }
 .form-note a { color: var(--blue-500); font-weight: 600; }
+.form-feedback {
+    margin-top: 0.5rem;
+    color: var(--blue-500);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
 
 /* --- CTA Banner --- */
 .cta-banner {
@@ -508,6 +516,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
     border-radius: var(--radius-lg);
     overflow: hidden;
     height: 420px;
+    aspect-ratio: 4 / 3;
     box-shadow: var(--shadow-md);
 }
 .service-block-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -564,6 +573,50 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
     font-size: 1rem;
 }
 .reviews-placeholder a { color: var(--blue-500); font-weight: 600; }
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+.testimonial-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+}
+.testimonial-quote {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.testimonial-author {
+    color: var(--navy-800);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.faq-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+}
+.faq-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+.faq-item p {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
 
 /* --- Comparison Cards --- */
 .comparison-grid {
@@ -731,6 +784,13 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
     .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 }
 
+@media (max-width: 992px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonial-grid { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 768px) {
     .nav {
         position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
@@ -756,6 +816,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
     .projects-grid { grid-template-columns: 1fr; }
     .comparison-grid { grid-template-columns: 1fr; }
     .portfolio-grid { grid-template-columns: 1fr; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .promises-grid { grid-template-columns: 1fr; }
