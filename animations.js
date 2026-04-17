@@ -10,7 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
         toggle.addEventListener('click', function () {
             toggle.classList.toggle('active');
             nav.classList.toggle('active');
-            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+            var isOpen = nav.classList.contains('active');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+            if (isOpen) {
+                var firstLink = nav.querySelector('.nav-link');
+                if (firstLink) firstLink.focus();
+            } else {
+                toggle.focus();
+            }
         });
 
         nav.querySelectorAll('.nav-link').forEach(function (link) {
@@ -44,6 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(el);
     });
 
+    document.querySelectorAll('.social-icon svg, .feature-icon svg, .contact-icon svg, .floating-call svg, .btn-call svg').forEach(function (icon) {
+        icon.setAttribute('aria-hidden', 'true');
+        icon.setAttribute('role', 'presentation');
+    });
+
     var heroBg = document.querySelector('.hero-bg');
     if (heroBg && window.innerWidth > 768) {
         var ticking = false;
@@ -58,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
                 ticking = true;
             }
-        });
+        }, { passive: true });
     }
 
     ['contact-form-home', 'contact-form-page'].forEach(function (id) {
@@ -74,15 +86,30 @@ document.addEventListener('DOMContentLoaded', function () {
             var body = (form.querySelector('[name="body"]') || form.querySelector('[name="message"]') || {}).value || '';
             var subject = 'Ironside Epoxy — Website Contact from ' + (name || 'Visitor');
             var mailtoBody = 'Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + body;
-            window.location.href = 'mailto:ironsideepoxy@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(mailtoBody);
+            var mailtoUrl = 'mailto:ironsideepoxy@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(mailtoBody);
+            var existingNotice = form.querySelector('.form-feedback');
+            if (!existingNotice) {
+                existingNotice = document.createElement('p');
+                existingNotice.className = 'form-feedback';
+                form.appendChild(existingNotice);
+            }
+            existingNotice.setAttribute('role', 'status');
+            existingNotice.setAttribute('aria-live', 'polite');
+            existingNotice.textContent = 'Opening your email app with your message details. If nothing opens, use the direct email link below.';
+            window.location.href = mailtoUrl;
+
+            window.setTimeout(function () {
+                existingNotice.innerHTML = 'If your email app did not open, <a href="' + mailtoUrl + '">click here to email ironsideepoxy@gmail.com</a>.';
+            }, 1200);
         });
     });
 
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             var target = document.querySelector(this.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 });
